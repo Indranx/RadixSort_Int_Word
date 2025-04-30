@@ -1,14 +1,13 @@
 package Question_1;
 
 import java.util.Arrays;
-
 public class RadixSortInteger {
-
+// This implementation is based on values from the Assignment Question however the algorithm is modular to take in any int input.
+// Random number generation is used at Q3.
     public static void main(String[] args) {
-
         // Step 1: Initialize input array.
         int initialNumArray[] = {275, 87, 426, 61, 409, 170, 677, 503}; // Array of numbers to be sorted initialized.
-        radixSort(initialNumArray); // Call the modularized radix sort function.
+        radixSort(initialNumArray); // Call radix sort function.
     }
 
     // Modularized function to perform radix sort

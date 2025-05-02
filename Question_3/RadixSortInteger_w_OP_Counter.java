@@ -1,9 +1,22 @@
 package Question_3;
 
 import java.util.Arrays;
+/*
+ * This file includes an operation counter for analyzing the algorithm's complexity.
+ * 
+ * Operation Counting Rules:
+ * --------------------------
+ * ➤ Loops use +=2 to count:
+ *    - Condition check, Increment step.
+ * 
+ * ➤ Complex assignments like:
+ *      int digit = (num / multiplier) % 10;
+ *    use +=3 to count:Division, Modulo, Assignment.
+ * 
+ * ➤ Insertions into arrays use +=3:Finding empty slot, Inserting value, Breaking loop.
+ */
 
-
-public class RadixSortInteger_w_Counter {
+public class RadixSortInteger_w_OP_Counter {
 
     public static long operationCount = 0; //counter initialization
     
@@ -44,7 +57,8 @@ public class RadixSortInteger_w_Counter {
                     operationCount++; // Operation for inserting into Array_1.
                 }
                 //printArray(Array_1, "After Iteration " + (iteration + 1) + " (Digit " + (iteration + 1) + ") - Array 1");
-                operationCount++; // Operation for printing Array_1.
+                //Printing has been commented so the output section is not cluttered while looking for primitive operations.
+                operationCount++; // Operation for printing Array_1. But still we do count printing as a operation.
     
             
                 Array_2 = new int[10][size];
@@ -144,7 +158,7 @@ public class RadixSortInteger_w_Counter {
             operationCount += 2;
             if (arr[digit][k] == -1) {
                 arr[digit][k] = num;
-                operationCount += 3; //add ops count
+                operationCount += 3; //empty check + insert + break
                 break;
             }
         }
@@ -190,11 +204,4 @@ public class RadixSortInteger_w_Counter {
         return -1;
     }
     
-    // main method not needed here
-    /*public static void main(String[] args) {
-
-        // Step 1: Initialize input array.
-        int initialNumArray[] = {275, 87, 426, 61, 409, 170, 677, 503}; // Array of numbers to be sorted initialized.
-        radixSort(initialNumArray); // Call radix sort function.
-    }*/
 }

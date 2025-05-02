@@ -1,9 +1,21 @@
 package Question_1;
 
 import java.util.Arrays;
-public class RadixSortInteger {
-// This implementation is based on values from the Assignment Question however the algorithm is modular to take in any int input.
-// Random number generation is used at Q3.
+
+public class RadixSortNumber {
+    /*
+     * ================================================================================
+     * Note:
+     * This implementation of Radix Sort is based on the initial input values 
+     * provided in the Assignment Question Paper. However, the algorithm is fully 
+     * modular and can handle any integer input array.
+     * 
+     * For experimental purposes (covered under Question 3 of the assignment), 
+     * random number generation is used to test the algorithm with various inputs 
+     * of different sizes and digit lengths. This helps in analyzing the time 
+     * complexity and behavior of the radix sort under different conditions.
+     * ================================================================================
+     */
     public static void main(String[] args) {
         // Step 1: Initialize input array.
         int initialNumArray[] = {275, 87, 426, 61, 409, 170, 677, 503}; // Array of numbers to be sorted initialized.

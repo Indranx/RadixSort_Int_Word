@@ -1,9 +1,9 @@
 package Question_3;
-
 import java.util.Random; // Import Random
 import java.util.Scanner;
 
-/*
+/* Experiment 1: Varying Input Size (n) - Inputs fixed at 4 digits only.
+* 
  * ================================================================================
  * Why Operation Counting Is Not Included Here:
  * -------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ import java.util.Scanner;
  * ================================================================================
  */
 
-public class RadixSortInteger_w_Random {
+public class RadixSortInteger_Test_InputSize_n {
 
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
@@ -34,7 +34,7 @@ public class RadixSortInteger_w_Random {
     
             int[] array = new int[size];
             for (int i = 0; i < size; i++) {
-                array[i] = random.nextInt(10000); // Values from 0 to 9999
+                array[i] = random.nextInt(9000) + 1000; // Make sure 4 digits number only (1000 - 9999)
             }
     
             System.out.println("\nGenerated Array:");
@@ -46,13 +46,13 @@ public class RadixSortInteger_w_Random {
             System.out.println("\nCalling Radix Sort with Operation Counter (Question_3)...");
             
             // Reset counter before sorting
-            RadixSortInteger_w_Counter.operationCount = 0;
+            RadixSortInteger_w_OP_Counter.operationCount = 0;
     
             // Call radix sort with counter
-            RadixSortInteger_w_Counter.radixSort(array);
+            RadixSortInteger_w_OP_Counter.radixSort(array);
     
             // Show operation count
-            System.out.println("\nTotal Operations: " + RadixSortInteger_w_Counter.operationCount);
+            System.out.println("\nTotal Operations: " + RadixSortInteger_w_OP_Counter.operationCount);
     
             scanner.close();
         }
